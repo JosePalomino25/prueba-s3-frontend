@@ -1,27 +1,49 @@
-# HttpPractica
+Objetivo
+Evaluar los conocimientos prácticos de Angular en temas clave como directivas, componentes, ciclos de vida, módulos, servicios de enrutamiento, peticiones HTTP y observables.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+---
 
-## Development server
+Sección 1: Directivas
+Crea un componente que reciba un array de objetos productos con las propiedades nombre y precio.
+Muestra los productos en una lista usando NgFor.
+Si el array está vacío, muestra un mensaje "No hay productos disponibles" utilizando NgIf.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Añade una funcionalidad que resalte los productos con precio mayor a 100 aplicando una clase CSS específica con NgClass.
+Cambia dinámicamente el color del texto según el precio del producto usando NgStyle (verde si es menor a 50, rojo si es mayor a 100).
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Sección 2: Componentes
+Crea un componente llamado ProductoCard que reciba un producto como @Input y muestre su nombre y precio en formato de tarjeta.
+Usa este componente dentro de un componente principal para renderizar la lista de productos.
 
-## Build
+---
+Sección 3: Ciclos de Vida de un Componente
+Crea un componente que use al menos los métodos ngOnInit, ngOnChanges y ngOnDestroy para:
+Inicializar datos en ngOnInit.
+Detectar cambios en las propiedades de entrada (@Input) con ngOnChanges.
+Limpiar recursos (como suscripciones a observables) en ngOnDestroy.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+Sección 4: Módulos
+Crea un módulo llamado ProductosModule que contenga:
+Un componente principal ProductosListComponent.
+El componente ProductoCard mencionado anteriormente.
+Asegúrate de exportar los componentes necesarios y de importar el módulo en el módulo raíz de la aplicación.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+Sección 5: Servicios y Router
+Crea un servicio ProductoService que contenga un método para obtener una lista de productos simulados (puedes usar un array estático).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Configura una ruta para el componente ProductosListComponent usando el router de Angular.
+Crea un enlace de navegación (<a routerLink="/productos">) para acceder al listado.
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Sección 6: Peticiones HTTP Client
+Usa el servicio ProductoService para realizar una petición HTTP GET a un endpoint simulado (https://fakestoreapi.com/products) y obtener la lista de productos.
+Muestra los productos obtenidos en el componente ProductosListComponent.
+
+Implementa un manejo de errores básico para mostrar un mensaje al usuario en caso de que falle la petición.
