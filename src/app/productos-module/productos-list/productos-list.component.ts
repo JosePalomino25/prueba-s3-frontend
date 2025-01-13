@@ -7,6 +7,8 @@ import {Producto} from "../../producto-interface";
   templateUrl: './productos-list.component.html',
 })
 export class ProductosListComponent implements OnInit {
+
+
   productos!: Producto[];
   error: string | null = null;
 

@@ -12,7 +12,15 @@ export class ProductoService {
 
   constructor(private http: HttpClient) {
   }
+  //Esta es del punto 5
+ /* obtenerProductos() {
+    return [
+      { nombre: 'Producto A', precio: 30 },
+      { nombre: 'Producto B', precio: 120 },
+    ];
+  }*/
 
+  //Punto 6
   obtenerProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.url)
   }
