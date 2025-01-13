@@ -4,18 +4,21 @@
     {{ producto.nombre }} - {{ producto.precio | currency }}
   </li>
 </ul>-->
+<div class="container-products">
+  <ng-container *ngIf="productos.length > 0; else noProducts">
+    <mat-card *ngFor="let producto of productos" class="producto-card" >
+      <mat-card-header>
+        <mat-card-title>{{producto.id}}.{{ producto.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <img [src]="producto.image" [alt]="producto.title">
+        <p [ngClass]="{'resaltar':producto.price > 100}" [ngStyle]="{'color': producto.price > 100? 'red' : producto.price < 50? 'green' : 'black'}">Precio: {{ producto.price | currency }}</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <ng-template #noProducts>
+    <h3>No hay productos Disponibles.</h3>
+  </ng-template>
+</div>
 
-<ng-container *ngIf="productos.length > 0; else noProducts">
-  <mat-card *ngFor="let producto of productos" class="producto-card" [ngClass]="{'resaltar':producto.precio > 100}" [ngStyle]="{'color': producto.precio > 100? 'red' : producto.precio < 50? 'green' : 'black'}">
-    <mat-card-header>
-      <mat-card-title>{{ producto.nombre }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Precio: {{ producto.precio | currency }}</p>
-    </mat-card-content>
-  </mat-card>
-</ng-container>
-<ng-template #noProducts>
-  <h3>No hay productos Disponibles.</h3>
-</ng-template>
 

@@ -9,10 +9,10 @@ import {Component} from '@angular/core';
 export class AppComponent{
   title = 'http-practica';
 
-  productos=[
-    {nombre:'Reloj', precio:150},
-    {nombre:'Camisa', precio:75},
-    {nombre:'Sandalia', precio:40},
-  ]
+  // productos=[
+  //   {nombre:'Reloj', precio:150},
+  //   {nombre:'Camisa', precio:75},
+  //   {nombre:'Sandalia', precio:40},
+  // ]
 
 }

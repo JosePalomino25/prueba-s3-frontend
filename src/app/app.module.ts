@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import {MatCardModule} from '@angular/material/card';
 import {ProductosModule} from "./productos-module/productos-module.module";
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -13,8 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     MatCardModule,
     ProductosModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
